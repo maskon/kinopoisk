@@ -489,7 +489,7 @@ body.no-scroll {
     }
     
     .content {
-        padding-bottom: 10px;
+        padding-bottom: 15px;
     }
     
     .content__box {
@@ -560,8 +560,12 @@ body.no-scroll {
     }
     
     .content__box {
-        flex: 0 0 100%;
         margin-bottom: 15px;
+    }
+    
+    .content__btn--all.active {
+        font-size: 18px;
+        padding: 7px 30px;
     }
     
     .footer__nav {
