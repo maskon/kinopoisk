@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Онлайн кинотеатр</title>
+</head>
+<body>
+   
+   <header class="header">
+       <div class="container">
+           <div class="header__item">
+               <div class="header__logo">
+                   <img src="img/svg/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Поиск">
+               </div>
+                <ul class="header__menu">
+                    <li class="header__list">Афиша</li>
+                    <li class="header__list">Медиа</li>
+                    <li class="header__list">Фильмы</li>
+                    <li class="header__list">Актеры</li>
+                    <li class="header__list">Новости</li>
+                    <li class="header__list">Подарки</li>
+                    <li class="header__list">Категории</li>
+                </ul>
+               <div class="header__nav">
+                   <div class="header__search">
+                       <input class="header__input" id="input-search" type="text" placeholder="Поиск фильма">
+                       <img id="img-search" src="img/svg/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA.svg" alt="Поиск">
+                   </div>
+               </div>
+           </div> 
+       </div>
+   </header>
+    
+    <div class="genre">
+        <div class="container">
+            <div class="genre__item">
+                <div class="genre__title">Сейчас в кино</div>
+<!--                <div class="genre__decor"></div>-->
+                <ul class="genre__filter" id="genre__filter">
+                    <li class="genre__list active" data-type="all">Все</li>
+                    <li class="genre__list" data-type="action">Боевики</li>
+                    <li class="genre__list" data-type="adventures">Приключения</li>
+                    <li class="genre__list" data-type="comedy">Комедии</li>
+                    <li class="genre__list" data-type="fantastic">Фантастика</li>
+                    <li class="genre__list" data-type="thriller">Триллеры</li>
+                    <li class="genre__list" data-type="drama">Драма</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="container">
+            <div class="content__item">
+<!--
+                <div class="content__box">
+                    <div class="content__img">
+                        <img class="content__img-el" src="img/films/image_1.jpg" alt="">
+                    </div>
+                    <div class="content__reiting">5.6</div>
+                    <div class="content__title content__inner">Побег из Претории
+                        <span class="content__title content__inner">Россия</span>
+                        
+                    </div>
+                    <div class="content__genre">Триллер</div>
+                    <div class="content__title">2017</div>  
+                </div>
+                
+                <div class="content__box">
+                    <div class="content__img">
+                        <img class="content__img-el" src="img/films/image_2.jpg" alt="">
+                    </div>
+                    <div class="content__reiting">6.8</div>
+                    <div class="content__title content__inner">Звёздные войны: Скайуокер
+                        <span class="content__title content__inner">Россия</span>
+                        
+                    </div>
+                    <div class="content__genre">Фантастика, фэнтези, боевик, приключения</div>
+                    <div class="content__title">2019</div>  
+                </div>
+                
+                <div class="content__box">
+                    <div class="content__img">
+                        <img class="content__img-el" src="img/films/image_3.jpg" alt="">
+                    </div>
+                    <div class="content__reiting">3.9</div>
+                    <div class="content__title content__inner">Джентльмены
+                        <span class="content__title content__inner">Китай</span>
+                        
+                    </div>
+                    <div class="content__genre">Боевик, комедия, криминал</div>
+                    <div class="content__title">2011</div>  
+                </div>
+                
+                <div class="content__box">
+                    <div class="content__img">
+                        <img class="content__img-el" src="img/films/image_1.jpg" alt="">
+                    </div>
+                    <div class="content__reiting">5.6</div>
+                    <div class="content__title content__inner">Побег из Претории
+                        <span class="content__title content__inner">Россия</span>
+                        
+                    </div>
+                    <div class="content__genre">Триллер</div>
+                    <div class="content__title">2018</div>  
+                </div>
+                <div class="content__box">
+                    <div class="content__img">
+                        <img src="img/films/image_5.jpg" alt="">
+                    </div>
+                    <div class="content__title">3022</div>
+                    <div class="content__genre">Фантастика, триллер</div>
+                </div>
+                <div class="content__box">
+                    <div class="content__img">
+                        <img src="img/films/image_6.jpg" alt="">
+                    </div>
+                    <div class="content__title">Хищные птицы: Потрясающая история Харли Квинн</div>
+                    <div class="content__genre">Боевик, криминал, комедия</div>
+                </div>
+                <div class="content__box">
+                    <div class="content__img">
+                        <img src="img/films/image_7.jpg" alt="">
+                    </div>
+                    <div class="content__title">Плохие парни навсегда</div>
+                    <div class="content__genre">Боевик, комедия, криминал</div>
+                </div>
+                <div class="content__box">
+                    <div class="content__img">
+                        <img src="img/films/image_8.jpg" alt="">
+                    </div>
+                    <div class="content__title">Прощай</div>
+                    <div class="content__genre">Боевик</div>
+                </div>
+                <div class="content__box">
+                    <div class="content__img">
+                        <img src="img/films/image_9.jpg" alt="">
+                    </div>
+                    <div class="content__title">Приди ко мне</div>
+                    <div class="content__genre">Триллер</div>
+                </div>
+-->
+            
+            </div>
+            <button class="content__btn--all" id="content__btn">Показать еще</button>
+        </div> 
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer__nav">
+                <li class="footer__list">Афиша</li>
+                <li class="footer__list">Новости</li>
+                <li class="footer__list">Персоны</li>
+                <li class="footer__list">Рейтинги</li>
+                <li class="footer__list">Рецензии</li>
+                <li class="footer__list">Каталог фильмов</li>
+            </ul>
+            <div class="footer__text">2020 © Kinoarea.  Все права защищены</div>
+            <div class="footer__link">
+                <a href="#">Политика конфиденциальности</a>
+            </div>  
+        </div>
+    </footer>
+    
+    <div class="modal" id="modal"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
