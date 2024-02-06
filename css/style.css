@@ -243,6 +243,8 @@ body.no-scroll {
 
 .content__box {
     position: relative;
+    display: flex;
+    flex-direction: column;
     flex: 0 0 33.333%;
     cursor: pointer;
     padding: 0 15px;
@@ -547,6 +549,10 @@ body.no-scroll {
         height: 31px;
     }
     
+    .genre {
+        margin-bottom: 10px;
+    }
+    
     .genre__title {
         font-size: 24px;
     }
@@ -566,6 +572,14 @@ body.no-scroll {
     .content__btn--all.active {
         font-size: 18px;
         padding: 7px 30px;
+    }
+    
+    .content__reiting {
+        top: 3px;
+        left: 18px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
     }
     
     .footer__nav {
