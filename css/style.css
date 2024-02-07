@@ -178,12 +178,17 @@ body.no-scroll {
 .header__burger {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 55px;
     right: 12px;
+    width: 60px;
+    height: 50px;
     z-index: 2;
 }
 
 .header__el {
+    position: absolute;
+    top: 25px;
+    right: 0;
     width: 50px;
     height: 3px;
     background-color: #fff;
@@ -192,7 +197,7 @@ body.no-scroll {
 .header__el:before {
     content: "";
     position: absolute;
-    top: -10px;
+    top: -15px;
     right: 0;
     width: 50px;
     height: 3px;
@@ -204,7 +209,7 @@ body.no-scroll {
 .header__el:after {
     content: "";
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 0;
     width: 50px;
     height: 3px;
@@ -407,11 +412,13 @@ body.no-scroll {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 1;
+    padding: 20px;
 }
 
 .modal__content {
@@ -621,18 +628,28 @@ body.no-scroll {
         height: 31px;
     }
     
+    .header__burger {
+        top: 35px;
+        width: 45px;
+        height: 45px;
+    }
+    
     .header__el {
-        position: absolute;
-        top: -25px;
-        right: 0;
+        top: 20px;
         width: 30px;
-        height: 3px;
-        background-color: #fff;
     }
 
     .header__el:before,
     .header__el:after {
         width: 30px;
+    }
+    
+    .header__el:before {
+        top: -10px; 
+    }
+
+    .header__el:after {
+        top: 10px; 
     }
     
     .genre {

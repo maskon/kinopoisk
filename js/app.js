@@ -9,6 +9,7 @@ const error = document.getElementById('error')
 const modal = document.getElementById('modal')
 const burger = document.getElementById('burger')
 const headerMenu = document.getElementById('header__menu')
+const headerEl = headerMenu.querySelectorAll('.header__list')
 const options = { headers: {accept: 'application/json', 'X-API-KEY': 'QP7MWPJ-HJSM4NS-PAW11N1-7ZSZ388'} }
 
 // Поиск появление инпута
@@ -37,6 +38,16 @@ burger.addEventListener('click', () => {
         burger.classList.remove('active')
     }
 })
+
+// Закрыть меню бургер
+function closeMenu () {
+    burger.classList.remove('active')
+    headerMenu.classList.remove('active')
+    body.classList.remove('no-scroll')
+}
+
+headerEl.forEach( (item) => { item.addEventListener('click', () => { closeMenu() }) })
+
 
 // Поиск
 inputSearch.addEventListener('input', () => {
@@ -118,6 +129,7 @@ async function getWeather(filter) {
         
         // Модальное окно
         content.addEventListener('click', (e) => {
+            closeMenu()
             if (e.target.classList.contains('content__img-el')) {
                 modal.innerHTML = ''
                 id = Number(e.target.id)
