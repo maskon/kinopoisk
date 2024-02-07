@@ -4,11 +4,11 @@ const inputSearch = document.getElementById('input-search')
 const genreFilter = document.getElementById('genre__filter')
 const genreList = genreFilter.querySelectorAll('.genre__list')
 const content = document.querySelector('.content__item')
-const contentBtn = document.querySelector('#content__btn')
-const error = document.querySelector('#error')
-const modal = document.querySelector('#modal')
-const burger = document.querySelector('#burger')
-const headerMenu = document.querySelector('#header__menu')
+const contentBtn = document.getElementById('content__btn')
+const error = document.getElementById('error')
+const modal = document.getElementById('modal')
+const burger = document.getElementById('burger')
+const headerMenu = document.getElementById('header__menu')
 const options = { headers: {accept: 'application/json', 'X-API-KEY': 'QP7MWPJ-HJSM4NS-PAW11N1-7ZSZ388'} }
 
 // Поиск появление инпута
@@ -21,9 +21,8 @@ imgSearch.addEventListener('click', () => {
     } 
 })
 
-window.addEventListener('scroll', () => {
-    inputSearch.classList.remove('active')
-})
+// Закрытие инпут-поиска при скроле
+window.addEventListener('scroll', () => { inputSearch.classList.remove('active') })
 
 // Бургер меню
 burger.addEventListener('click', () => {
@@ -37,6 +36,13 @@ burger.addEventListener('click', () => {
         body.classList.remove('no-scroll')
         burger.classList.remove('active')
     }
+})
+
+// Поиск
+inputSearch.addEventListener('input', () => {
+    content.innerHTML = ''
+    value = inputSearch.value
+    getWeather(value)
 })
 
 let value
@@ -62,19 +68,12 @@ async function getWeather(filter) {
                 genreList.forEach( (item) => { item.classList.remove('active') })
                 
                 if (e.target.dataset.type === "action") {filterCategory('боевик'.toLowerCase()) }
-    
-                else if (e.target.dataset.type === "adventures") {filterCategory('Приключения'.toLowerCase()) }
-                
-                else if (e.target.dataset.type === "comedy") {filterCategory('Комедия'.toLowerCase()) }
-                
-                else if (e.target.dataset.type === "fantastic") {filterCategory('Фантастика'.toLowerCase()) }
-                
-                else if (e.target.dataset.type === "thriller") {filterCategory('Триллер'.toLowerCase()) }
-                
-                else if (e.target.dataset.type === "drama") {filterCategory('Драма'.toLowerCase()) }
-                
-                else if (e.target.dataset.type === "all") { e.target.classList.add('active'), filteredData = array, renderHTML(), pagination() }
-                
+                else if (e.target.dataset.type === "adventures") {filterCategory('Приключения'.toLowerCase()) }    
+                else if (e.target.dataset.type === "comedy") {filterCategory('Комедия'.toLowerCase()) } 
+                else if (e.target.dataset.type === "fantastic") {filterCategory('Фантастика'.toLowerCase()) }   
+                else if (e.target.dataset.type === "thriller") {filterCategory('Триллер'.toLowerCase()) }  
+                else if (e.target.dataset.type === "drama") {filterCategory('Драма'.toLowerCase()) } 
+                else if (e.target.dataset.type === "all") { e.target.classList.add('active'), filteredData = array, renderHTML(), pagination() }  
                 
                 function filterCategory(genreCategory) {
                     e.target.classList.add('active')
@@ -113,12 +112,8 @@ async function getWeather(filter) {
                 
                 contentBtn.addEventListener('click', () => { item.style.display = 'block', contentBtn.classList.remove('active') })
             })
-            if (contentBboxes.length === 0) {
-                error.innerHTML = 'Ничего не найдено!'
-                contentBtn.classList.remove('active')
-            } else {
-                error.innerHTML = ''
-            }
+            
+            contentBboxes.length === 0 ? (error.innerHTML = 'Ничего не найдено!', contentBtn.classList.remove('active')) : error.innerHTML = ''
         }
         
         // Модальное окно
@@ -162,31 +157,16 @@ async function getWeather(filter) {
             const modalContent = modal.querySelector('.modal__content')
             const close = modal.querySelector('#close')
             
-            setTimeout( () => {
-                modalContent.style.transform = 'scale(1)'
-            },0)
+            setTimeout( () => { modalContent.style.transform = 'scale(1)' }, 0)
             
             close.addEventListener('click', () => {
                 modalContent.style.transform = 'scale(0)'
-                setTimeout( () => {
-                    
-                    modal.classList.remove('active')
-                    body.classList.remove('no-scroll')
-                     
-                },400)
+                setTimeout( () => { modal.classList.remove('active'), body.classList.remove('no-scroll') }, 400)
             })
         })
- 
+        
     } catch (err) {
         console.error(err)
     }
 }
-
-// Поиск
-inputSearch.addEventListener('input', () => {
-    content.innerHTML = ''
-    value = inputSearch.value
-    getWeather(value)
-})
-
 getWeather()
