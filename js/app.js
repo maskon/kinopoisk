@@ -21,6 +21,10 @@ imgSearch.addEventListener('click', () => {
     } 
 })
 
+window.addEventListener('scroll', () => {
+    inputSearch.classList.remove('active')
+})
+
 // Бургер меню
 burger.addEventListener('click', () => {
     headerMenu.classList.toggle('active')
