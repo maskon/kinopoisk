@@ -5,14 +5,35 @@ const genreFilter = document.getElementById('genre__filter')
 const genreList = genreFilter.querySelectorAll('.genre__list')
 const content = document.querySelector('.content__item')
 const contentBtn = document.querySelector('#content__btn')
+const error = document.querySelector('#error')
 const modal = document.querySelector('#modal')
+const burger = document.querySelector('#burger')
+const headerMenu = document.querySelector('#header__menu')
 const options = { headers: {accept: 'application/json', 'X-API-KEY': 'QP7MWPJ-HJSM4NS-PAW11N1-7ZSZ388'} }
 
+// Поиск появление инпута
 imgSearch.addEventListener('click', () => {
-    inputSearch.classList.toggle('active')
-    inputSearch.focus()
+    if (headerMenu.classList.contains('active')) {
+        inputSearch.classList.remove('active')
+    } else {
+        inputSearch.classList.toggle('active')
+        inputSearch.focus()
+    } 
 })
 
+// Бургер меню
+burger.addEventListener('click', () => {
+    headerMenu.classList.toggle('active')
+    if (headerMenu.classList.contains('active')) {
+        body.classList.add('no-scroll')
+        burger.classList.add('active')
+        inputSearch.classList.remove('active')
+        
+    } else {
+        body.classList.remove('no-scroll')
+        burger.classList.remove('active')
+    }
+})
 
 let value
 let filteredData
@@ -88,6 +109,12 @@ async function getWeather(filter) {
                 
                 contentBtn.addEventListener('click', () => { item.style.display = 'block', contentBtn.classList.remove('active') })
             })
+            if (contentBboxes.length === 0) {
+                error.innerHTML = 'Ничего не найдено!'
+                contentBtn.classList.remove('active')
+            } else {
+                error.innerHTML = ''
+            }
         }
         
         // Модальное окно
@@ -151,6 +178,7 @@ async function getWeather(filter) {
     }
 }
 
+// Поиск
 inputSearch.addEventListener('input', () => {
     content.innerHTML = ''
     value = inputSearch.value
