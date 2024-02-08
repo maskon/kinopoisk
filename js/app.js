@@ -131,7 +131,6 @@ async function getWeather(filter) {
         content.addEventListener('click', (e) => {
             closeMenu()
             if (e.target.classList.contains('content__img-el')) {
-                modal.innerHTML = ''
                 id = Number(e.target.id)
                 let genreNames = filteredData[id].genres.map(genre => genre.name).join(', ')
                 modal.classList.add('active')
@@ -173,7 +172,7 @@ async function getWeather(filter) {
             
             close.addEventListener('click', () => {
                 modalContent.style.transform = 'scale(0)'
-                setTimeout( () => { modal.classList.remove('active'), body.classList.remove('no-scroll') }, 400)
+                setTimeout( () => { modal.classList.remove('active'), body.classList.remove('no-scroll'), modal.innerHTML = '' }, 400)
             })
         })
         
