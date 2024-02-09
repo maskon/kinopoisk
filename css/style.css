@@ -97,6 +97,7 @@ body.no-scroll {
 .wrapper {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -273,7 +274,6 @@ body.no-scroll {
 
 /* content */
 .content {
-    flex: 1 0 auto;
     padding-bottom: 30px;
 }
 
@@ -372,7 +372,7 @@ body.no-scroll {
 
 /* footer */
 .footer {
-    flex: 0 0 auto;
+    margin-top: auto;
     background: #151A26;
     padding: 50px 0;
 }
