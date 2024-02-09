@@ -7,81 +7,83 @@
     <title>Онлайн кинотеатр</title>
 </head>
 <body>
-   
-   <header class="header">
-       <div class="container">
-           <div class="header__item">
-               <div class="header__logo">
-                   <img src="img/svg/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Поиск">
-               </div>
-                <ul class="header__menu" id="header__menu">
-                    <li class="header__list"><a href="#"></a>Афиша</li>
-                    <li class="header__list"><a href="#"></a>Медиа</li>
-                    <li class="header__list"><a href="#"></a>Фильмы</li>
-                    <li class="header__list"><a href="#"></a>Актеры</li>
-                    <li class="header__list"><a href="#"></a>Новости</li>
-                    <li class="header__list"><a href="#"></a>Подарки</li>
-                    <li class="header__list"><a href="#"></a>Категории</li>
-                </ul>
-               <div class="header__nav">
-                   <div class="header__search">
-                       <input class="header__input" id="input-search" type="text" placeholder="Поиск фильма">
-                       <img id="img-search" src="img/svg/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA.svg" alt="Поиск">
+   <div class="wrapper">
+       <header class="header">
+           <div class="container">
+               <div class="header__item">
+                   <div class="header__logo">
+                       <img src="img/svg/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Поиск">
                    </div>
-               </div>
-               <div class="header__burger" id="burger">
-                   <div class="header__el"></div>
-               </div>
-           </div> 
-       </div>
-   </header>
-    
-    <article class="genre">
-        <div class="container">
-            <div class="genre__item">
-                <h2 class="genre__title">Сейчас в кино</h2>
-                <ul class="genre__filter" id="genre__filter">
-                    <li class="genre__list active" data-type="all">Все</li>
-                    <li class="genre__list" data-type="action">Боевики</li>
-                    <li class="genre__list" data-type="adventures">Приключения</li>
-                    <li class="genre__list" data-type="comedy">Комедии</li>
-                    <li class="genre__list" data-type="fantastic">Фантастика</li>
-                    <li class="genre__list" data-type="thriller">Триллеры</li>
-                    <li class="genre__list" data-type="drama">Драма</li>
-                </ul>
-            </div>
-            
-        </div>
-    </article>
-    
-    <div class="content">
-        <div class="container">
-            <div class="content__error" id="error"></div>
-            <div class="content__item">
-            </div>
-            <button class="content__btn--all" id="content__btn">Показать еще</button>
-        </div> 
-    </div>
-    
-    <footer class="footer">
-        <div class="container">
-            <ul class="footer__nav">
-                <li class="footer__list"><a href="#"></a>Афиша</li>
-                <li class="footer__list"><a href="#"></a>Новости</li>
-                <li class="footer__list"><a href="#"></a>Персоны</li>
-                <li class="footer__list"><a href="#"></a>Рейтинги</li>
-                <li class="footer__list"><a href="#"></a>Рецензии</li>
-                <li class="footer__list"><a href="#"></a>Каталог фильмов</li>
-            </ul>
-            <div class="footer__text">2020 © Kinoarea.  Все права защищены</div>
-            <div class="footer__link">
-                <a href="#">Политика конфиденциальности</a>
-            </div>  
-        </div>
-    </footer>
-    
-    <div class="modal" id="modal"></div>
+                    <ul class="header__menu" id="header__menu">
+                        <li class="header__list"><a href="#"></a>Афиша</li>
+                        <li class="header__list"><a href="#"></a>Медиа</li>
+                        <li class="header__list"><a href="#"></a>Фильмы</li>
+                        <li class="header__list"><a href="#"></a>Актеры</li>
+                        <li class="header__list"><a href="#"></a>Новости</li>
+                        <li class="header__list"><a href="#"></a>Подарки</li>
+                        <li class="header__list"><a href="#"></a>Категории</li>
+                    </ul>
+                   <div class="header__nav">
+                       <div class="header__search">
+                           <input class="header__input" id="input-search" type="text" placeholder="Поиск фильма">
+                           <img id="img-search" src="img/svg/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA.svg" alt="Поиск">
+                       </div>
+                   </div>
+                   <div class="header__burger" id="burger">
+                       <div class="header__el"></div>
+                   </div>
+               </div> 
+           </div>
+       </header>
 
+        <article class="genre">
+            <div class="container">
+                <div class="genre__item">
+                    <h2 class="genre__title">Сейчас в кино</h2>
+                    <ul class="genre__filter" id="genre__filter">
+                        <li class="genre__list active" data-type="all">Все</li>
+                        <li class="genre__list" data-type="action">Боевики</li>
+                        <li class="genre__list" data-type="adventures">Приключения</li>
+                        <li class="genre__list" data-type="comedy">Комедии</li>
+                        <li class="genre__list" data-type="fantastic">Фантастика</li>
+                        <li class="genre__list" data-type="thriller">Триллеры</li>
+                        <li class="genre__list" data-type="drama">Драма</li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+
+        <div class="content">
+            <div class="container">
+                <div class="content__error" id="error"></div>
+                <div class="content__item">
+                </div>
+                <button class="content__btn--all" id="content__btn">Показать еще</button>
+            </div> 
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <ul class="footer__nav">
+                    <li class="footer__list"><a href="#"></a>Афиша</li>
+                    <li class="footer__list"><a href="#"></a>Новости</li>
+                    <li class="footer__list"><a href="#"></a>Персоны</li>
+                    <li class="footer__list"><a href="#"></a>Рейтинги</li>
+                    <li class="footer__list"><a href="#"></a>Рецензии</li>
+                    <li class="footer__list"><a href="#"></a>Каталог фильмов</li>
+                </ul>
+                <div class="footer__text">2020 © Kinoarea.  Все права защищены</div>
+                <div class="footer__link">
+                    <a href="#">Политика конфиденциальности</a>
+                </div>  
+            </div>
+        </footer>
+
+   </div>
+   
+   <div class="modal" id="modal"></div>
+   
     <script src="js/app.js"></script>
 </body>
 </html>

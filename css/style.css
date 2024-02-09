@@ -94,6 +94,12 @@ body.no-scroll {
     overflow: hidden;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 .container {
     max-width: 1224px;
     padding: 0 15px;
@@ -267,6 +273,7 @@ body.no-scroll {
 
 /* content */
 .content {
+    flex: 1 0 auto;
     padding-bottom: 30px;
 }
 
@@ -365,6 +372,7 @@ body.no-scroll {
 
 /* footer */
 .footer {
+    flex: 0 0 auto;
     background: #151A26;
     padding: 50px 0;
 }
