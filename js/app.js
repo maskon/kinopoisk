@@ -12,6 +12,8 @@ const headerMenu = document.getElementById('header__menu')
 const headerEl = headerMenu.querySelectorAll('.header__list')
 const options = { headers: {accept: 'application/json', 'X-API-KEY': 'QP7MWPJ-HJSM4NS-PAW11N1-7ZSZ388'} }
 
+getWeather()
+
 // Поиск появление инпута
 imgSearch.addEventListener('click', () => {
     if (headerMenu.classList.contains('active')) {
@@ -130,6 +132,7 @@ async function getWeather(filter) {
         // Модальное окно
         content.addEventListener('click', (e) => {
             closeMenu()
+            modal.innerHTML = ''
             if (e.target.classList.contains('content__img-el')) {
                 id = Number(e.target.id)
                 let genreNames = filteredData[id].genres.map(genre => genre.name).join(', ')
@@ -180,4 +183,3 @@ async function getWeather(filter) {
         console.error(err)
     }
 }
-getWeather()
