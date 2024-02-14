@@ -121,7 +121,7 @@ async function getWeather(filter) {
         function pagination() {
             const contentBboxes = content.querySelectorAll('.content__box')
             contentBboxes.forEach( (item, index) => {
-                index > 11 ? (item.style.display = 'none', contentBtn.classList.add('active')) : (item.style.display = 'block', contentBtn.classList.remove('active'))
+                index > 5 ? (item.style.display = 'none', contentBtn.classList.add('active')) : (item.style.display = 'block', contentBtn.classList.remove('active'))
                 
                 contentBtn.addEventListener('click', () => { item.style.display = 'block', contentBtn.classList.remove('active') })
             })
